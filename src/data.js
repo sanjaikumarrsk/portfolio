@@ -7,7 +7,7 @@ export const profile = {
   email: 'r.sanjairsk@gmail.com',
   location: 'Karur, Tamil Nadu',
   github: 'https://github.com/sanjaikumarrsk',
-  linkedin: 'https://www.linkedin.com/in/sanjai-kumar-r',
+  linkedin: 'https://www.linkedin.com/in/sanjai-kumar-r-7924a7366/',
   resume: assetPath('RSK-RESUME.pdf'),
 }
 
