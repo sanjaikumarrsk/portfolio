@@ -1,3 +1,5 @@
+export const assetPath = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`
+
 export const profile = {
   name: 'Sanjai Kumar R',
   role: 'AI & Data Science Student',
@@ -6,12 +8,12 @@ export const profile = {
   location: 'Karur, Tamil Nadu',
   github: 'https://github.com/sanjaikumarrsk',
   linkedin: 'https://www.linkedin.com/in/sanjai-kumar-r',
-  resume: '/RSK-RESUME.pdf',
+  resume: assetPath('RSK-RESUME.pdf'),
 }
 
 export const college = {
   name: 'M. Kumarasamy College of Engineering',
-  logo: '/assets/mkce-logo.png',
+  logo: assetPath('assets/mkce-logo.png'),
 }
 
 export const education = {
@@ -19,7 +21,7 @@ export const education = {
   academicYear: '2026 — 2027',
   cgpa: '8.70',
   cgpaNote: 'Up to 4th Semester',
-  schoolLogo: '/assets/mount-giris-logo.jpg',
+  schoolLogo: assetPath('assets/mount-giris-logo.jpg'),
   schools: [
     { level: 'HSC', school: 'Mount Giris Matriculation Higher Secondary School', percentage: '85%' },
     { level: 'SSLC', school: 'Mount Giris Matriculation Higher Secondary School', percentage: '86%' },
@@ -34,7 +36,7 @@ export const projects = [
     technologies: ['Dart', 'Mobile', 'Automation'],
     github: 'https://github.com/sanjaikumarrsk/FRIDAY-',
     visual: 'friday',
-    image: '/assets/projects/friday-.png',
+    image: assetPath('assets/projects/friday-.png'),
     kind: 'Automation',
   },
   {
@@ -44,7 +46,7 @@ export const projects = [
     technologies: ['JavaScript', 'Socket.IO', 'Mobile'],
     github: 'https://github.com/sanjaikumarrsk/INTRALINK',
     visual: 'intralink',
-    image: '/assets/projects/intralink.png',
+    image: assetPath('assets/projects/intralink.png'),
     kind: 'Web',
   },
   {
@@ -54,7 +56,7 @@ export const projects = [
     technologies: ['Python', 'OpenCV', 'MediaPipe'],
     github: 'https://github.com/sanjaikumarrsk/SIGNNOVA',
     visual: 'signnova',
-    image: '/assets/projects/signnova.png',
+    image: assetPath('assets/projects/signnova.png'),
     kind: 'AI / ML',
   },
   {
@@ -64,7 +66,7 @@ export const projects = [
     technologies: ['Python', 'Deep Learning', 'Flask'],
     github: 'https://github.com/sanjaikumarrsk/SMART-ALERT',
     visual: 'alert',
-    image: '/assets/projects/smart-alert.png',
+    image: assetPath('assets/projects/smart-alert.png'),
     kind: 'AI / ML',
   },
   {
@@ -74,7 +76,7 @@ export const projects = [
     technologies: ['Python', 'OpenCV', 'Image Registration'],
     github: 'https://github.com/sanjaikumarrsk/LUNAR-IMAGE-REGISTRATION',
     visual: 'lunar',
-    image: '/assets/projects/lunar-image-registration.png',
+    image: assetPath('assets/projects/lunar-image-registration.png'),
     kind: 'AI / ML',
   },
   {
@@ -84,32 +86,32 @@ export const projects = [
     technologies: ['ESP32', 'ASP.NET', 'SQL Server'],
     github: 'https://github.com/sanjaikumarrsk/SMART-WASHER-SYSTEM-',
     visual: 'washer',
-    image: '/assets/projects/smart-washer-system-.png',
+    image: assetPath('assets/projects/smart-washer-system-.png'),
     kind: 'Automation',
   },
 ]
 
 export const skillGroups = [
   { name: 'Languages', icon: 'code', skills: [
-    { name: 'Java', logo: '/assets/tech/java.svg' }, { name: 'Python', logo: '/assets/tech/python.svg' },
-    { name: 'JavaScript', logo: '/assets/tech/javascript.svg' }, { name: 'C', logo: '/assets/tech/c.svg' },
-    { name: 'SQL', logo: '/assets/tech/sqlite.svg' },
+    { name: 'Java', logo: assetPath('assets/tech/java.svg') }, { name: 'Python', logo: assetPath('assets/tech/python.svg') },
+    { name: 'JavaScript', logo: assetPath('assets/tech/javascript.svg') }, { name: 'C', logo: assetPath('assets/tech/c.svg') },
+    { name: 'SQL', logo: assetPath('assets/tech/sqlite.svg') },
   ] },
-  { name: 'Frontend', icon: 'layout', skills: [{ name: 'HTML', logo: '/assets/tech/html5.svg' }, { name: 'CSS', logo: '/assets/tech/css3.svg' }, { name: 'JavaScript', logo: '/assets/tech/javascript.svg' }, { name: 'React.js', logo: '/assets/tech/react.svg' }] },
-  { name: 'Backend', icon: 'server', skills: [{ name: 'Spring Boot', logo: '/assets/tech/spring.svg' }, { name: 'JWT Authentication', logo: '/assets/tech/jwt.svg' }] },
-  { name: 'Databases', icon: 'database', skills: [{ name: 'PostgreSQL', logo: '/assets/tech/postgresql.svg' }, { name: 'MySQL', logo: '/assets/tech/mysql.svg' }, { name: 'MongoDB', logo: '/assets/tech/mongodb.svg' }] },
-  { name: 'Cloud & DevOps', icon: 'cloud', skills: [{ name: 'AWS', logo: '/assets/tech/amazonwebservices.svg' }, { name: 'Microsoft Azure', logo: '/assets/tech/azure.svg' }, { name: 'Docker', logo: '/assets/tech/docker.svg' }, { name: 'Kubernetes', logo: '/assets/tech/kubernetes.svg' }, { name: 'Jenkins', logo: '/assets/tech/jenkins.svg' }, { name: 'Linux', logo: '/assets/tech/linux.svg' }] },
+  { name: 'Frontend', icon: 'layout', skills: [{ name: 'HTML', logo: assetPath('assets/tech/html5.svg') }, { name: 'CSS', logo: assetPath('assets/tech/css3.svg') }, { name: 'JavaScript', logo: assetPath('assets/tech/javascript.svg') }, { name: 'React.js', logo: assetPath('assets/tech/react.svg') }] },
+  { name: 'Backend', icon: 'server', skills: [{ name: 'Spring Boot', logo: assetPath('assets/tech/spring.svg') }, { name: 'JWT Authentication', logo: assetPath('assets/tech/jwt.svg') }] },
+  { name: 'Databases', icon: 'database', skills: [{ name: 'PostgreSQL', logo: assetPath('assets/tech/postgresql.svg') }, { name: 'MySQL', logo: assetPath('assets/tech/mysql.svg') }, { name: 'MongoDB', logo: assetPath('assets/tech/mongodb.svg') }] },
+  { name: 'Cloud & DevOps', icon: 'cloud', skills: [{ name: 'AWS', logo: assetPath('assets/tech/amazonwebservices.svg') }, { name: 'Microsoft Azure', logo: assetPath('assets/tech/azure.svg') }, { name: 'Docker', logo: assetPath('assets/tech/docker.svg') }, { name: 'Kubernetes', logo: assetPath('assets/tech/kubernetes.svg') }, { name: 'Jenkins', logo: assetPath('assets/tech/jenkins.svg') }, { name: 'Linux', logo: assetPath('assets/tech/linux.svg') }] },
 ]
 
 export const certifications = [
-  { name: 'AI Tools Workshop', issuer: 'Be10x', date: 'Jun 2026', credential: '0270772f-3809-4400-b29b-1e1c61cd09971445050', logo: '/assets/organizations/be10x.png' },
-  { name: 'Machine Learning with Python', issuer: 'IBM', date: 'Jun 2026', credential: 'fc722c027dde4c71892abde5cc9f0bdd', logo: '/assets/organizations/ibm.png' },
-  { name: 'Certificate of Participation in ByteQuest 1.0', issuer: 'Unstop', date: 'May 2026', credential: 'a0246c01-4d12-4c1a-82d5-4f416c1e0641', logo: '/assets/brands/unstop.svg' },
-  { name: 'Data Analysis with Python', issuer: 'IBM', date: 'May 2026', credential: '24d6b183074c43eb92d3c1086bd17d99', logo: '/assets/organizations/ibm.png' },
-  { name: 'Java (Basic) Certificate', issuer: 'HackerRank', date: 'Apr 2026', credential: '95BBDEDE83B', logo: '/assets/organizations/hackerrank.png' },
-  { name: 'Microsoft Applied Skills: Get started with Azure management tasks', issuer: 'Microsoft', date: 'Apr 2026', credential: '49AE52014C5D7539', logo: '/assets/organizations/microsoft.png' },
-  { name: 'Data Science', issuer: 'IBM', date: 'Jan 2026', credential: '12402247efa642f5bdadc04320bac9a', logo: '/assets/organizations/ibm.png' },
-  { name: 'Introduction to Python', issuer: 'IBM', date: 'Jan 2026', credential: '00426812c79444083a3e80a4d2b03f', logo: '/assets/organizations/ibm.png' },
+  { name: 'AI Tools Workshop', issuer: 'Be10x', date: 'Jun 2026', credential: '0270772f-3809-4400-b29b-1e1c61cd09971445050', logo: assetPath('assets/organizations/be10x.png') },
+  { name: 'Machine Learning with Python', issuer: 'IBM', date: 'Jun 2026', credential: 'fc722c027dde4c71892abde5cc9f0bdd', logo: assetPath('assets/organizations/ibm.png') },
+  { name: 'Certificate of Participation in ByteQuest 1.0', issuer: 'Unstop', date: 'May 2026', credential: 'a0246c01-4d12-4c1a-82d5-4f416c1e0641', logo: assetPath('assets/brands/unstop.svg') },
+  { name: 'Data Analysis with Python', issuer: 'IBM', date: 'May 2026', credential: '24d6b183074c43eb92d3c1086bd17d99', logo: assetPath('assets/organizations/ibm.png') },
+  { name: 'Java (Basic) Certificate', issuer: 'HackerRank', date: 'Apr 2026', credential: '95BBDEDE83B', logo: assetPath('assets/organizations/hackerrank.png') },
+  { name: 'Microsoft Applied Skills: Get started with Azure management tasks', issuer: 'Microsoft', date: 'Apr 2026', credential: '49AE52014C5D7539', logo: assetPath('assets/organizations/microsoft.png') },
+  { name: 'Data Science', issuer: 'IBM', date: 'Jan 2026', credential: '12402247efa642f5bdadc04320bac9a', logo: assetPath('assets/organizations/ibm.png') },
+  { name: 'Introduction to Python', issuer: 'IBM', date: 'Jan 2026', credential: '00426812c79444083a3e80a4d2b03f', logo: assetPath('assets/organizations/ibm.png') },
 ]
 
 export const achievements = [

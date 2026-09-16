@@ -5,7 +5,7 @@ import {
   MapPin, Menu, MessageCircle, Monitor, Phone, Play, Rocket, Send, Server, Sparkles, Trophy,
   X, Zap,
 } from 'lucide-react'
-import { achievements, certifications, college, education, focusAreas, profile, projects, skillGroups } from './data'
+import { achievements, assetPath, certifications, college, education, focusAreas, profile, projects, skillGroups } from './data'
 
 const navItems = [
   ['home', 'Home'], ['about', 'About'], ['skills', 'Skills'], ['projects', 'Projects'],
@@ -40,7 +40,7 @@ function Icon({ name, size = 18 }) {
 }
 
 function SocialGlyph({ type }) {
-  const source = type === 'in' ? '/assets/brands/linkedin.svg' : '/assets/brands/github.svg'
+  const source = type === 'in' ? assetPath('assets/brands/linkedin.svg') : assetPath('assets/brands/github.svg')
   return <span className={`social-brand-wrap social-brand-${type}`}><img className="social-brand-image" src={source} alt={`${type === 'in' ? 'LinkedIn' : 'GitHub'} logo`} /></span>
 }
 
@@ -128,7 +128,7 @@ function Portrait() {
       <div className="portrait-label label-one">AI / DS</div>
       <div className="portrait-label label-two">KARUR · TN</div>
       <div className="portrait-orbit orbit-one" /><div className="portrait-orbit orbit-two" />
-      <img className="portrait-art" src="/assets/profile-blended.png" alt="Sanjai Kumar R profile artwork" />
+      <img className="portrait-art" src={assetPath('assets/profile-blended.png')} alt="Sanjai Kumar R profile artwork" />
       <div className="floating-square square-a" /><div className="floating-square square-b" /><div className="floating-square square-c" />
     </div>
   )
@@ -283,11 +283,11 @@ function Education() {
 
 function Achievements() {
   const achievementImages = {
-    MICROSOFT: { src: '/assets/organizations/microsoft.png', alt: 'Microsoft logo' },
-    GOOGLE: { src: '/assets/organizations/google-student-ambassador.jpg', alt: 'Google Student Ambassador Program image' },
-    'M. KUMARASAMY COLLEGE OF ENGINEERING': { src: '/assets/mkce-logo.png', alt: 'M. Kumarasamy College of Engineering logo' },
-    'UNSTOP IGNITERS CLUB': { src: '/assets/brands/unstop.svg', alt: 'Unstop logo' },
-    SYNTAX2CODE: { src: '/assets/organizations/syntax2code.jpg', alt: 'Syntax2Code logo' },
+    MICROSOFT: { src: assetPath('assets/organizations/microsoft.png'), alt: 'Microsoft logo' },
+    GOOGLE: { src: assetPath('assets/organizations/google-student-ambassador.jpg'), alt: 'Google Student Ambassador Program image' },
+    'M. KUMARASAMY COLLEGE OF ENGINEERING': { src: assetPath('assets/mkce-logo.png'), alt: 'M. Kumarasamy College of Engineering logo' },
+    'UNSTOP IGNITERS CLUB': { src: assetPath('assets/brands/unstop.svg'), alt: 'Unstop logo' },
+    SYNTAX2CODE: { src: assetPath('assets/organizations/syntax2code.jpg'), alt: 'Syntax2Code logo' },
   }
   const achievementItems = achievements.filter((item) => item.meta !== 'GDSC').concat({ title: "1st Place — Genesis'26", meta: 'SYNTAX2CODE', text: "1st place as an individual in the Genesis'26 hackathon organized by Syntax2Code.", icon: 'award' })
   return <section className="section-shell section-block achievements" id="achievements"><SectionHeading kicker="ACHIEVEMENTS" title="MILESTONES THAT MATTER" detail="A few moments that made the work feel bigger than the screen." /><div className="achievement-grid">{achievementItems.map((item, index) => { const asset = achievementImages[item.meta]; return <Reveal className="achievement-card" delay={index * 80} key={item.title}><div className="achievement-icon">{asset ? <img className="achievement-logo" src={asset.src} alt={asset.alt} /> : <Icon name={item.icon} size={23} />}</div><div><span>{item.meta}</span><h3>{item.title}</h3><p>{item.text}</p></div><ArrowDownRight className="achievement-arrow" size={17} /></Reveal> })}</div></section>
