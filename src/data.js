@@ -13,7 +13,7 @@ export const profile = {
 
 export const college = {
   name: 'M. Kumarasamy College of Engineering',
-  logo: assetPath('assets/mkce-logo.png'),
+  logo: assetPath('assets/mkce-logo.webp'),
 }
 
 export const education = {
@@ -21,7 +21,7 @@ export const education = {
   academicYear: '2026 — 2027',
   cgpa: '8.70',
   cgpaNote: 'Up to 4th Semester',
-  schoolLogo: assetPath('assets/mount-giris-logo.jpg'),
+  schoolLogo: assetPath('assets/mount-giris-logo.webp'),
   schools: [
     { level: 'HSC', school: 'Mount Giris Matriculation Higher Secondary School', percentage: '85%' },
     { level: 'SSLC', school: 'Mount Giris Matriculation Higher Secondary School', percentage: '86%' },
@@ -36,7 +36,7 @@ export const projects = [
     technologies: ['Dart', 'Mobile', 'Automation'],
     github: 'https://github.com/sanjaikumarrsk/FRIDAY-',
     visual: 'friday',
-    image: assetPath('assets/projects/friday-.png'),
+    image: assetPath('assets/projects/friday-.webp'),
     kind: 'Automation',
   },
   {
@@ -46,7 +46,7 @@ export const projects = [
     technologies: ['JavaScript', 'Socket.IO', 'Mobile'],
     github: 'https://github.com/sanjaikumarrsk/INTRALINK',
     visual: 'intralink',
-    image: assetPath('assets/projects/intralink.png'),
+    image: assetPath('assets/projects/intralink.webp'),
     kind: 'Web',
   },
   {
@@ -56,7 +56,7 @@ export const projects = [
     technologies: ['Python', 'OpenCV', 'MediaPipe'],
     github: 'https://github.com/sanjaikumarrsk/SIGNNOVA',
     visual: 'signnova',
-    image: assetPath('assets/projects/signnova.png'),
+    image: assetPath('assets/projects/signnova.webp'),
     kind: 'AI / ML',
   },
   {
@@ -66,7 +66,7 @@ export const projects = [
     technologies: ['Python', 'Deep Learning', 'Flask'],
     github: 'https://github.com/sanjaikumarrsk/SMART-ALERT',
     visual: 'alert',
-    image: assetPath('assets/projects/smart-alert.png'),
+    image: assetPath('assets/projects/smart-alert.webp'),
     kind: 'AI / ML',
   },
   {
@@ -76,7 +76,7 @@ export const projects = [
     technologies: ['Python', 'OpenCV', 'Image Registration'],
     github: 'https://github.com/sanjaikumarrsk/LUNAR-IMAGE-REGISTRATION',
     visual: 'lunar',
-    image: assetPath('assets/projects/lunar-image-registration.png'),
+    image: assetPath('assets/projects/lunar-image-registration.webp'),
     kind: 'AI / ML',
   },
   {
@@ -86,7 +86,7 @@ export const projects = [
     technologies: ['ESP32', 'ASP.NET', 'SQL Server'],
     github: 'https://github.com/sanjaikumarrsk/SMART-WASHER-SYSTEM-',
     visual: 'washer',
-    image: assetPath('assets/projects/smart-washer-system-.png'),
+    image: assetPath('assets/projects/smart-washer-system-.webp'),
     kind: 'Automation',
   },
 ]
@@ -104,14 +104,14 @@ export const skillGroups = [
 ]
 
 export const certifications = [
-  { name: 'AI Tools Workshop', issuer: 'Be10x', date: 'Jun 2026', credential: '0270772f-3809-4400-b29b-1e1c61cd09971445050', logo: assetPath('assets/organizations/be10x.png') },
-  { name: 'Machine Learning with Python', issuer: 'IBM', date: 'Jun 2026', credential: 'fc722c027dde4c71892abde5cc9f0bdd', logo: assetPath('assets/organizations/ibm.png') },
+  { name: 'AI Tools Workshop', issuer: 'Be10x', date: 'Jun 2026', credential: '0270772f-3809-4400-b29b-1e1c61cd09971445050', logo: assetPath('assets/organizations/be10x.webp') },
+  { name: 'Machine Learning with Python', issuer: 'IBM', date: 'Jun 2026', credential: 'fc722c027dde4c71892abde5cc9f0bdd', logo: assetPath('assets/organizations/ibm.webp') },
   { name: 'Certificate of Participation in ByteQuest 1.0', issuer: 'Unstop', date: 'May 2026', credential: 'a0246c01-4d12-4c1a-82d5-4f416c1e0641', logo: assetPath('assets/brands/unstop.svg') },
-  { name: 'Data Analysis with Python', issuer: 'IBM', date: 'May 2026', credential: '24d6b183074c43eb92d3c1086bd17d99', logo: assetPath('assets/organizations/ibm.png') },
-  { name: 'Java (Basic) Certificate', issuer: 'HackerRank', date: 'Apr 2026', credential: '95BBDEDE83B', logo: assetPath('assets/organizations/hackerrank.png') },
-  { name: 'Microsoft Applied Skills: Get started with Azure management tasks', issuer: 'Microsoft', date: 'Apr 2026', credential: '49AE52014C5D7539', logo: assetPath('assets/organizations/microsoft.png') },
-  { name: 'Data Science', issuer: 'IBM', date: 'Jan 2026', credential: '12402247efa642f5bdadc04320bac9a', logo: assetPath('assets/organizations/ibm.png') },
-  { name: 'Introduction to Python', issuer: 'IBM', date: 'Jan 2026', credential: '00426812c79444083a3e80a4d2b03f', logo: assetPath('assets/organizations/ibm.png') },
+  { name: 'Data Analysis with Python', issuer: 'IBM', date: 'May 2026', credential: '24d6b183074c43eb92d3c1086bd17d99', logo: assetPath('assets/organizations/ibm.webp') },
+  { name: 'Java (Basic) Certificate', issuer: 'HackerRank', date: 'Apr 2026', credential: '95BBDEDE83B', logo: assetPath('assets/organizations/hackerrank.webp') },
+  { name: 'Microsoft Applied Skills: Get started with Azure management tasks', issuer: 'Microsoft', date: 'Apr 2026', credential: '49AE52014C5D7539', logo: assetPath('assets/organizations/microsoft.webp') },
+  { name: 'Data Science', issuer: 'IBM', date: 'Jan 2026', credential: '12402247efa642f5bdadc04320bac9a', logo: assetPath('assets/organizations/ibm.webp') },
+  { name: 'Introduction to Python', issuer: 'IBM', date: 'Jan 2026', credential: '00426812c79444083a3e80a4d2b03f', logo: assetPath('assets/organizations/ibm.webp') },
 ]
 
 export const achievements = [
