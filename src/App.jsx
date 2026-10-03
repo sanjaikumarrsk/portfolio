@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import {
   ArrowDownRight, ArrowRight, Award, BadgeCheck, BrainCircuit, Check, ChevronDown, Cloud, Code2, Database,
   Download, ExternalLink, FileText, Globe2, GraduationCap, Mail,
@@ -323,11 +323,11 @@ function BackgroundMusic() {
   const audioRef = useRef(null)
   const [isPlaying, setIsPlaying] = useState(false)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const audio = audioRef.current
     if (!audio) return undefined
 
-    audio.volume = 0.15
+    audio.volume = 0.25
     audio.loop = true
 
     const syncPlayingState = () => setIsPlaying(!audio.paused)
