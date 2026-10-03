@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import {
   ArrowDownRight, ArrowRight, Award, BadgeCheck, BrainCircuit, Check, ChevronDown, Cloud, Code2, Database,
   Download, ExternalLink, FileText, Globe2, GraduationCap, Mail,
-  MapPin, Menu, MessageCircle, Monitor, Phone, Play, Rocket, Send, Server, Sparkles, Trophy,
+  MapPin, Menu, MessageCircle, Monitor, Pause, Phone, Play, Rocket, Send, Server, Sparkles, Trophy,
   X, Zap,
 } from 'lucide-react'
 import { achievements, assetPath, certifications, college, education, focusAreas, profile, projects, skillGroups } from './data'
@@ -319,6 +319,68 @@ function FloatingCubes() {
   return <div className="floating-cubes" aria-hidden="true">{Array.from({ length: 20 }, (_, index) => <span className="page-cube" key={index} />)}</div>
 }
 
+function BackgroundMusic() {
+  const audioRef = useRef(null)
+  const [isPlaying, setIsPlaying] = useState(false)
+
+  useEffect(() => {
+    const audio = audioRef.current
+    if (!audio) return undefined
+
+    audio.volume = 0.15
+    audio.loop = true
+
+    const syncPlayingState = () => setIsPlaying(!audio.paused)
+    const attemptPlay = () => {
+      const playPromise = audio.play()
+      if (playPromise?.then) {
+        return playPromise.then(() => true).catch(() => false)
+      }
+      return Promise.resolve(!audio.paused)
+    }
+    const interactionEvents = ['pointerdown', 'click']
+    const removeInteractionListeners = () => interactionEvents.forEach((eventName) => document.removeEventListener(eventName, startAfterInteraction, true))
+    const startAfterInteraction = () => {
+      removeInteractionListeners()
+      attemptPlay().then(syncPlayingState)
+    }
+
+    audio.addEventListener('play', syncPlayingState)
+    audio.addEventListener('pause', syncPlayingState)
+    audio.addEventListener('ended', syncPlayingState)
+    interactionEvents.forEach((eventName) => document.addEventListener(eventName, startAfterInteraction, true))
+    attemptPlay().then(syncPlayingState)
+
+    return () => {
+      audio.removeEventListener('play', syncPlayingState)
+      audio.removeEventListener('pause', syncPlayingState)
+      audio.removeEventListener('ended', syncPlayingState)
+      removeInteractionListeners()
+    }
+  }, [])
+
+  const toggleMusic = () => {
+    const audio = audioRef.current
+    if (!audio) return
+    if (audio.paused) {
+      audio.play().catch(() => {})
+    } else {
+      audio.pause()
+    }
+  }
+
+  return (
+    <>
+      <audio ref={audioRef} src={assetPath('I Could Be.mp3')} autoPlay loop preload="auto" aria-hidden="true" />
+      <button className="music-control" type="button" onClick={toggleMusic} aria-label={isPlaying ? 'Pause background music' : 'Play background music'} title={isPlaying ? 'Pause background music' : 'Play background music'}>
+        <span className={isPlaying ? 'music-bars is-playing' : 'music-bars'} aria-hidden="true"><i /><i /><i /></span>
+        <span className="music-control-icon" aria-hidden="true">{isPlaying ? <Pause size={13} /> : <Play size={13} />}</span>
+        <span className="music-control-label">MUSIC</span>
+      </button>
+    </>
+  )
+}
+
 function Footer() {
   return <footer className="footer"><div className="footer-main"><button className="brand footer-brand" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}><span className="brand-dot" /> <span className="brand-name">RSK</span></button><span className="footer-role">AI &amp; DATA SCIENCE STUDENT</span><div className="footer-links"><a href={profile.github} target="_blank" rel="noreferrer"><SocialGlyph type="gh" /> GitHub</a><a href={profile.linkedin} target="_blank" rel="noreferrer"><SocialGlyph type="in" /> LinkedIn</a><a href={`mailto:${profile.email}`}><Mail size={15} /> Email</a><a href="tel:+919655920225"><Phone size={15} /> Phone</a></div><button className="top-button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Back to top"><ChevronDown size={18} /></button></div><div className="footer-bottom"><span>© 2026 Sanjai Kumar R</span><span>Build · Learn · Improve · Repeat</span><span>Designed with intent.</span></div></footer>
 }
@@ -336,5 +398,5 @@ export default function App() {
     sections.forEach((section) => observer.observe(section))
     return () => observer.disconnect()
   }, [])
-  return <><Navbar active={active} open={menuOpen} setOpen={setMenuOpen} /><main><FloatingCubes /><Hero /><About /><Skills /><Projects /><Education /><Achievements /><Certifications /><GithubStats /><Contact /></main><Footer /></>
+  return <><BackgroundMusic /><Navbar active={active} open={menuOpen} setOpen={setMenuOpen} /><main><FloatingCubes /><Hero /><About /><Skills /><Projects /><Education /><Achievements /><Certifications /><GithubStats /><Contact /></main><Footer /></>
 }
